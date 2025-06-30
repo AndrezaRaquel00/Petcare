@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Agendamento | PetCare</title>
+
+  <!-- Ícone que aparece na aba do navegador -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/favicon4.png') }}">
+
+  <!-- Estilos CSS principais -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style-novo_agendamento.css') }}">
+
+  <!-- Fonte Montserrat do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Biblioteca de ícones FontAwesome -->
+  <script src="https://kit.fontawesome.com/99c29731df.js" crossorigin="anonymous"></script>
+
+  <!-- Define a responsividade da página -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- MENU DE NAVEGAÇÃO SUPERIOR -->
+  <header>
+    <div class="menu-container">
+      <div class="logo">🐾 PetCare</div>
+      <nav>
+        <ul>
+          <!-- Links para outras páginas -->
+          <li><a href="{{ url_for('home') }}">Início</a></li>
+          <li><a href="{{ url_for('listar_clientes') }}">Clientes</a></li>
+          <li><a href="{{ url_for('listar_pets') }}">Pets</a></li>
+          <li><a href="{{ url_for('listar_agendamentos') }}">Agendamentos</a></li>
+          <li><a href="{{ url_for('financas') }}">Finanças</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="conteudo">
+    <h2>Editar Agendamento</h2>
+
+    <!-- Formulário de edição de agendamento -->
+    <form method="POST" class="formulario">
+      <!-- Campo: Nome do Cliente -->
+      <label for="nome_cliente">Nome do Cliente:</label>
+      <input type="text" id="nome_cliente" name="nome_cliente" value="{{ agendamento[1] }}" required>
+
+      <!-- Campo: Nome do Pet -->
+      <label for="nome_pet">Nome do Pet:</label>
+      <input type="text" id="nome_pet" name="nome_pet" value="{{ agendamento[2] }}" required>
+
+      <!-- Campo: Tipo de Serviço -->
+      <label for="tipo_servico">Tipo de Serviço:</label>
+      <select id="tipo_servico" name="tipo_servico" required>
+        <option value="">Selecione</option>
+        <!-- O campo será marcado como "selected" caso corresponda ao valor atual -->
+        <option value="Banho" {% if agendamento[3] == 'Banho' %}selected{% endif %}>Banho</option>
+        <option value="Tosa" {% if agendamento[3] == 'Tosa' %}selected{% endif %}>Tosa</option>
+        <option value="Consulta" {% if agendamento[3] == 'Consulta' %}selected{% endif %}>Consulta</option>
+        <option value="Vacinação" {% if agendamento[3] == 'Vacinação' %}selected{% endif %}>Vacinação</option>
+      </select>
+
+      <!-- Campo: Data do agendamento -->
+      <label for="data">Data:</label>
+      <input type="date" id="data" name="data" value="{{ agendamento[4] }}" required>
+
+      <!-- Campo: Horário do agendamento -->
+      <label for="horario">Horário:</label>
+      <input type="time" id="horario" name="horario" value="{{ agendamento[5] }}" required>
+
+      <!-- Campo: Observações adicionais -->
+      <label for="observacoes">Observações:</label>
+      <textarea id="observacoes" name="observacoes" rows="3">{{ agendamento[6] }}</textarea>
+
+      <!-- Botão para enviar o formulário -->
+      <button type="submit" class="botao">Atualizar Agendamento</button>
+    </form>
+  </main>
+
+  <!-- RODAPÉ DA PÁGINA -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 PetCare. Todos os direitos reservados.</p>
+      <div class="redes">
+        <!-- Ícones de redes sociais -->
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

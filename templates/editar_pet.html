@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Pet | PetCare</title>
+
+  <!-- Ícone que aparece na aba do navegador -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/favicon4.png') }}">
+
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style-novo_agendamento.css') }}">
+
+  <!-- Responsividade para dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Biblioteca de ícones FontAwesome -->
+  <script src="https://kit.fontawesome.com/99c29731df.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- MENU DE NAVEGAÇÃO -->
+  <header>
+    <div class="menu-container">
+      <!-- Logo da empresa -->
+      <div class="logo">🐾 PetCare</div>
+      <nav>
+        <ul>
+          <!-- Links do menu para as outras páginas -->
+          <li><a href="{{ url_for('home') }}">Início</a></li>
+          <li><a href="{{ url_for('listar_clientes') }}">Clientes</a></li>
+          <li><a href="{{ url_for('listar_pets') }}">Pets</a></li>
+          <li><a href="{{ url_for('listar_agendamentos') }}">Agendamentos</a></li>
+          <li><a href="{{ url_for('financas') }}">Finanças</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="conteudo">
+    <h2>Editar Pet</h2>
+
+    <!-- Formulário para editar dados do pet -->
+    <form method="POST" class="formulario">
+      <!-- Nome do pet -->
+      <label for="nome_pet">Nome do Pet:</label>
+      <input type="text" id="nome_pet" name="nome_pet" value="{{ pet[1] }}" required>
+
+      <!-- Nome do tutor -->
+      <label for="nome_tutor">Nome do Tutor:</label>
+      <input type="text" id="nome_tutor" name="nome_tutor" value="{{ pet[2] }}" required>
+
+      <!-- Raça do pet -->
+      <label for="raca">Raça:</label>
+      <input type="text" id="raca" name="raca" value="{{ pet[3] }}">
+
+      <!-- Idade do pet -->
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" name="idade" value="{{ pet[4] }}">
+
+      <!-- Peso do pet -->
+      <label for="peso">Peso (kg):</label>
+      <input type="number" step="0.1" id="peso" name="peso" value="{{ pet[5] }}">
+
+      <!-- Botão de envio -->
+      <button type="submit" class="botao">Atualizar Pet</button>
+    </form>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 PetCare. Todos os direitos reservados.</p>
+      <div class="redes">
+        <!-- Ícones de redes sociais -->
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

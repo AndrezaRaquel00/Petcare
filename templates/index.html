@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Responsividade para dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PetCare</title>
+
+  <!-- Ícone da aba do navegador -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/favicon4.png') }}">
+
+  <!-- Estilo principal do site -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- Fonte Montserrat importada do Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+
+  <!-- Biblioteca de ícones FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Script JavaScript personalizado -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+<body>
+
+  <!-- MENU SUPERIOR -->
+  <header>
+    <div class="menu-container">
+      <!-- Logotipo do site -->
+      <div class="logo">🐾 PetCare</div>
+
+      <!-- Navegação com links para as outras páginas -->
+      <nav class="menu">
+        <ul>
+          <li><a href="{{ url_for('home') }}">Início</a></li>
+          <li><a href="{{ url_for('listar_clientes') }}">Clientes</a></li>
+          <li><a href="{{ url_for('listar_pets') }}">Pets</a></li>
+          <li><a href="{{ url_for('listar_agendamentos') }}">Agendamentos</a></li>
+          <li><a href="{{ url_for('financas') }}">Finanças</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SEÇÃO DO SLIDESHOW -->
+  <section class="slideshow-full">
+    <!-- Contêiner das imagens que se alternam -->
+    <div class="slideshow" id="slideshow">
+      <img src="{{ url_for('static', filename='imagens/teste9.jpg') }}" class="slide active" alt="">
+      <img src="{{ url_for('static', filename='imagens/fundo3.jpg') }}" class="slide" alt="">
+      <img src="{{ url_for('static', filename='imagens/teste6.jpg') }}" class="slide" alt="">
+    </div>
+
+    <!-- Texto e botão centralizado sobre o slideshow -->
+    <div class="texto-central">
+      <h2>Sua empresa PetCare!</h2>
+      <p>Seu cliente merece o melhor. Agende banhos, tosas e mais com carinho!</p>
+      <a class="botao" href="{{ url_for('listar_agendamentos') }}">Agendar Agora</a>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 PetCare. Todos os direitos reservados.</p>
+      
+      <!-- Ícones de redes sociais -->
+      <div class="redes">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
