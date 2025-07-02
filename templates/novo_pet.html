@@ -43,35 +43,38 @@
 
   <!-- CONTEÚDO PRINCIPAL COM O FORMULÁRIO PARA CADASTRAR UM NOVO CLIENTE -->
   <main class="conteudo">
-    <h2>Novo Cliente</h2>
+    <h2>Novo Pet</h2>
 
     <!-- Formulário de cadastro de cliente. Enviado via método POST -->
-    <form action="{{ url_for('novo_cliente') }}" method="POST" class="formulario">
+    <!-- Formulário de cadastro de pet. Enviado via método POST -->
+    <form action="{{ url_for('novo_pet') }}" method="POST" class="formulario">
 
-      <!-- Nome do Cliente -->
-      <label for="nome_cliente">Nome do Cliente:</label>
-      <input type="text" id="nome_cliente" name="nome_cliente" required>
-
-      <!-- Nome do Pet relacionado ao cliente -->
+      <!-- Nome do Pet -->
       <label for="nome_pet">Nome do Pet:</label>
       <input type="text" id="nome_pet" name="nome_pet" required>
 
-      <!-- Telefone de contato -->
-      <label for="telefone">Telefone:</label>
-      <input type="number" id="telefone" name="telefone" required>
+      <!-- Nome do Tutor -->
+      <label for="nome_tutor">Nome do Tutor:</label>
+      <input type="text" id="nome_tutor" name="nome_tutor" required>
 
-      <!-- Email do cliente -->
-      <label for="email">E-mail:</label>
-      <input type="text" id="email" name="email" required>
+      <!-- Raça do Pet -->
+      <label for="raca">Raça:</label>
+      <input type="text" id="raca" name="raca">
 
-      <!-- Endereço do cliente -->
-      <label for="endereco">Endereço:</label>
-      <textarea id="endereco" name="endereco" rows="4"></textarea>
+      <!-- Idade do Pet -->
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" name="idade">
+
+      <!-- Peso do Pet -->
+      <label for="peso">Peso (kg):</label>
+      <input type="number" step="0.1" id="peso" name="peso">
 
       <!-- Botão para enviar o formulário -->
-      <button type="submit" class="botao">Salvar Cliente</button>
-    </form>
-  </main>
+      <button type="submit" class="botao">Salvar Pet</button>
+      </form>
+
+    </main>
+
 
   <!-- RODAPÉ PADRÃO COM REDES SOCIAIS -->
   <footer>
